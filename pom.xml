@@ -13,13 +13,7 @@
   	 <artifactId>gson</artifactId>
   	 <version>2.10.1</version>
   	</dependency>
-  	
-  	<dependency>
-  		<groupId>br.com.julioleal</groupId>
-  		<artifactId>chat-server</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  	
+
   </dependencies>
   
 </project>
