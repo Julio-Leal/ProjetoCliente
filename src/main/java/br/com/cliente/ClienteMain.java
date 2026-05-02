@@ -1,5 +1,6 @@
 package br.com.cliente;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
@@ -10,7 +11,7 @@ import br.com.model.Mensagem;
 
 public class ClienteMain {
 
-    private static Scanner input = new Scanner(System.in);
+    private static final Scanner INPUT = new Scanner(System.in);
     private static String ip;
     private static int porta;
 
@@ -43,7 +44,7 @@ public class ClienteMain {
                 System.out.println("6 - Logout");
                 System.out.println("7 - Enviar mensagem\n");
 
-                String opcao = input.nextLine();
+                String opcao = INPUT.nextLine();
 
                 Mensagem msg = new Mensagem();
 
@@ -53,10 +54,10 @@ public class ClienteMain {
                         msg.setOp("login");
 
                         System.out.print("Usuário: ");
-                        msg.setUsuario(input.nextLine());
+                        msg.setUsuario(INPUT.nextLine());
 
                         System.out.print("Senha: ");
-                        msg.setSenha(input.nextLine());
+                        msg.setSenha(INPUT.nextLine());
 
                         out.println(gson.toJson(msg));
                         break;
@@ -65,13 +66,13 @@ public class ClienteMain {
                         msg.setOp("cadastrarUsuario");
 
                         System.out.print("Nome: ");
-                        msg.setNome(input.nextLine());
+                        msg.setNome(INPUT.nextLine());
 
                         System.out.print("Usuário: ");
-                        msg.setUsuario(input.nextLine());
+                        msg.setUsuario(INPUT.nextLine());
 
                         System.out.print("Senha: ");
-                        msg.setSenha(input.nextLine());
+                        msg.setSenha(INPUT.nextLine());
 
                         out.println(gson.toJson(msg));
                         break;
@@ -87,12 +88,12 @@ public class ClienteMain {
                         msg.setToken(token);
 
                         System.out.print("Novo nome: ");
-                        msg.setNovoNome(input.nextLine());
+                        msg.setNome(INPUT.nextLine());
                         
-                        msg.setNovoUsuario(input.nextLine());
+                    //  msg.setNovoUsuario(input.nextLine());
                         
                         System.out.print("Nova senha: ");
-                        msg.setNovaSenha(input.nextLine());
+                        msg.setSenha(INPUT.nextLine());
 
                         out.println(gson.toJson(msg));
                         break;
@@ -113,10 +114,10 @@ public class ClienteMain {
                     case "7":
 
                         System.out.print("Destinatário: ");
-                        String dest = input.nextLine();
+                        String dest = INPUT.nextLine();
 
                         System.out.print("Mensagem: ");
-                        String texto = input.nextLine();
+                        String texto = INPUT.nextLine();
 
                         msg.setOp("enviarMensagem");
                         msg.setToken(token);
@@ -131,18 +132,17 @@ public class ClienteMain {
                 }
             }
 
-        } catch (Exception e) {
-            System.out.println("Erro ao conectar");
-            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Erro ao conectar: \""+e.getMessage()+"\"");
         }
     }
 
     private static void informarIPEPorta() {
 
         System.out.print("IP: ");
-        ip = input.nextLine();
+        ip = INPUT.nextLine();
 
         System.out.print("Porta: ");
-        porta = Integer.parseInt(input.nextLine());
+        porta = Integer.parseInt(INPUT.nextLine());
     }
 }
