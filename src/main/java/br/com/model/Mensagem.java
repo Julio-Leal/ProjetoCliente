@@ -117,4 +117,18 @@ public class Mensagem {
 //	public void setNovaSenha(String novaSenha) {
 //		this.novaSenha = novaSenha;
 //	}
+
+    @Override
+    public String toString() {
+        return "Mensagem{" +
+                "op='" + op + '\'' +
+                ", nome='" + nome + '\'' +
+                ", usuario='" + usuario + '\'' +
+                ", senha='" + senha + '\'' +
+                ", token='" + token + '\'' +
+                ", destinatario='" + destinatario + '\'' +
+                ", mensagem='" + mensagem + '\'' +
+                ", resposta='" + resposta + '\'' +
+                '}';
+    }
 }
