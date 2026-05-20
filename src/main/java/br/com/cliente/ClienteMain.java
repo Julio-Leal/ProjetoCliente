@@ -1,4 +1,4 @@
-package br.com.cliente;
+ package br.com.cliente;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -45,6 +45,10 @@ public class ClienteMain {
                 System.out.println("[5] - Deletar");
                 System.out.println("[6] - Logout");
                 System.out.println("[7] - Enviar mensagem");
+//                System.out.println("==============================");
+//                System.out.println("💬 Adm Menu 🗨️");
+//                System.out.println("==============================");
+//                System.out.println("[8] - ");
                 System.out.println("[0] - Sair");
                 System.out.println("==============================\n");
                 
@@ -77,7 +81,12 @@ public class ClienteMain {
                 		break;
                 	case "3":
                 		msg.setOp("consultarUsuario");
+                		
+                		//update to test at room 
+                		System.out.println("Informe o token que deseja consultar:");
+                		token = INPUT.nextLine();
                 		msg.setToken(token);
+                		//update to test at room
                 		
                 		System.out.println("[Enviando]: "+gson.toJson(msg));
                 		out.println(gson.toJson(msg));
