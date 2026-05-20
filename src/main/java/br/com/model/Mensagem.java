@@ -6,6 +6,7 @@ public class Mensagem {
     private String usuario;
     private String senha;
     private String token;
+    private String token_admin;
     private String destinatario;
     private String mensagem;
     private String resposta;
@@ -25,71 +26,79 @@ public class Mensagem {
     public Mensagem() {
     }
 
-    public String getOp() { 
-    	return op; 
-    }
-    
-    public void setOp(String op) { 
-    	this.op = op; 
-    }
+    public String getOp() {
+		return op;
+	}
 
-    public String getNome() { 
-    	return nome; 
-    }
-    
-    public void setNome(String nome) { 
-    	this.nome = nome; 
-    }
+	public void setOp(String op) {
+		this.op = op;
+	}
 
-    public String getUsuario() { 
-    	return usuario; 
-    }
-    
-    public void setUsuario(String usuario) { 
-    	this.usuario = usuario; 
-    }
+	public String getNome() {
+		return nome;
+	}
 
-    public String getSenha() { 
-    	return senha; 
-    }
-    
-    public void setSenha(String senha) { 
-    	this.senha = senha; 
-    }
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    public String getToken() { 
-    	return token; 
-    }
-    
-    public void setToken(String token) { 
-    	this.token = token; 
-    }
+	public String getUsuario() {
+		return usuario;
+	}
 
-    public String getDestinatario() { 
-    	return destinatario; 
-    }
-    
-    public void setDestinatario(String destinatario) { 
-    	this.destinatario = destinatario; 
-    }
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
 
-    public String getMensagem() { 
-    	return mensagem; 
-    }
-    
-    public void setMensagem(String mensagem) { 
-    	this.mensagem = mensagem; 
-    }
+	public String getSenha() {
+		return senha;
+	}
 
-    public String getResposta() { 
-    	return resposta; 
-    }
-    
-    public void setResposta(String resposta) { 
-    	this.resposta = resposta; 
-    }
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 
-    @Override
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+	public String getToken_admin() {
+		return token_admin;
+	}
+
+	public void setToken_admin(String token_admin) {
+		this.token_admin = token_admin;
+	}
+
+	public String getDestinatario() {
+		return destinatario;
+	}
+
+	public void setDestinatario(String destinatario) {
+		this.destinatario = destinatario;
+	}
+
+	public String getMensagem() {
+		return mensagem;
+	}
+
+	public void setMensagem(String mensagem) {
+		this.mensagem = mensagem;
+	}
+
+	public String getResposta() {
+		return resposta;
+	}
+
+	public void setResposta(String resposta) {
+		this.resposta = resposta;
+	}
+
+	@Override
     public String toString() {
         return "Mensagem{" +
                 "op='" + op + '\'' +
@@ -97,6 +106,7 @@ public class Mensagem {
                 ", usuario='" + usuario + '\'' +
                 ", senha='" + senha + '\'' +
                 ", token='" + token + '\'' +
+                ", token_admin='" + token_admin + '\'' +
                 ", destinatario='" + destinatario + '\'' +
                 ", mensagem='" + mensagem + '\'' +
                 ", resposta='" + resposta + '\'' +
