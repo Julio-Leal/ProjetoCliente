@@ -1,5 +1,7 @@
 package br.com.model;
 
+import java.util.List;
+
 public class Mensagem {
     private String op;
     private String nome;
@@ -10,6 +12,7 @@ public class Mensagem {
     private String destinatario;
     private String mensagem;
     private String resposta;
+    private List<Usuario> lista_usuarios;
 
     public Mensagem(String op, String nome, String usuario, String senha, String token, String destinatario,
                     String mensagem, String resposta) {
@@ -94,8 +97,16 @@ public class Mensagem {
 		return resposta;
 	}
 
-	public void setResposta(String resposta) {
+public void setResposta(String resposta) {
 		this.resposta = resposta;
+	}
+
+	public List<Usuario> getLista_usuarios() {
+		return lista_usuarios;
+	}
+
+	public void setLista_usuarios(List<Usuario> lista_usuarios) {
+		this.lista_usuarios = lista_usuarios;
 	}
 
 	@Override
