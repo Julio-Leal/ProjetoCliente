@@ -146,7 +146,8 @@ public class ClienteMain {
 
                     case "8": // ADM - Consultar todos os usuários
                         msg.setOp("consultarUsuariosAdmin");
-                        msg.setToken_admin(token);
+//                        msg.setToken_admin(token);
+                        msg.setToken(token);
 
                         System.out.println("[Enviando]: " + gson.toJson(msg));
                         out.println(gson.toJson(msg));
@@ -154,7 +155,8 @@ public class ClienteMain {
 
                     case "9": // ADM - Consultar usuário específico
                         msg.setOp("consultarUsuarioAdmin");
-                        msg.setToken_admin(token);
+//                        msg.setToken_admin(token);
+                        msg.setToken(token);
                         System.out.print("Login do usuário a consultar: ");
                         msg.setUsuario(INPUT.nextLine());
 
@@ -164,7 +166,8 @@ public class ClienteMain {
 
                     case "10": // ADM - Atualizar dados de outro usuário
                         msg.setOp("atualizarUsuarioAdmin");
-                        msg.setToken_admin(token);
+//                        msg.setToken_admin(token);
+                        msg.setToken(token);
                         System.out.print("Login do usuário a atualizar: ");
                         msg.setUsuario(INPUT.nextLine());
                         System.out.print("Novo Nome (deixe em branco para não alterar): ");
@@ -184,7 +187,8 @@ public class ClienteMain {
 
                     case "11": // ADM - Deletar usuário
                         msg.setOp("deletarUsuarioAdmin");
-                        msg.setToken_admin(token);
+//                        msg.setToken_admin(token);
+                        msg.setToken(token);
                         System.out.print("Login do usuário a deletar: ");
                         msg.setUsuario(INPUT.nextLine());
 
