@@ -103,11 +103,17 @@ public class ClienteMain {
                         String novoNome = INPUT.nextLine();
                         if (!novoNome.trim().isEmpty()) {
                             msg.setNome(novoNome);
+                        } else {
+                        	novoNome = "";
+                        	msg.setNome(novoNome);
                         }
                         System.out.print("Nova Senha (6 dígitos numéricos, deixe em branco para não alterar): ");
                         String novaSenha = INPUT.nextLine();
                         if (!novaSenha.trim().isEmpty()) {
                             msg.setSenha(novaSenha);
+                        } else {
+                        	novaSenha = "";
+                        	msg.setSenha(novaSenha);
                         }
 
                         System.out.println("[Enviando]: " + gson.toJson(msg));
