@@ -79,20 +79,34 @@ public class ClienteGUI extends JFrame {
 
     private JPanel criarPainelConexao() {
         JPanel pnl = new JPanel(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(10, 10, 10, 10);
 
-        gbc.gridx = 0; gbc.gridy = 0; pnl.add(new JLabel("IP do Servidor:"), gbc);
+        GridBagConstraints gbc0 = new GridBagConstraints();
+        gbc0.insets = new Insets(10, 10, 10, 10);
+        gbc0.gridx = 0; gbc0.gridy = 0;
+        pnl.add(new JLabel("IP do Servidor:"), gbc0);
+
+        GridBagConstraints gbc1 = new GridBagConstraints();
+        gbc1.insets = new Insets(10, 10, 10, 10);
+        gbc1.gridx = 1; gbc1.gridy = 0;
         txtIP = new JTextField("localhost", 15);
-        gbc.gridx = 1; pnl.add(txtIP, gbc);
+        pnl.add(txtIP, gbc1);
 
-        gbc.gridx = 0; gbc.gridy = 1; pnl.add(new JLabel("Porta:"), gbc);
+        GridBagConstraints gbc2 = new GridBagConstraints();
+        gbc2.insets = new Insets(10, 10, 10, 10);
+        gbc2.gridx = 0; gbc2.gridy = 1;
+        pnl.add(new JLabel("Porta:"), gbc2);
+
+        GridBagConstraints gbc3 = new GridBagConstraints();
+        gbc3.insets = new Insets(10, 10, 10, 10);
+        gbc3.gridx = 1; gbc3.gridy = 1;
         txtPorta = new JTextField("12345", 5);
-        gbc.gridx = 1; pnl.add(txtPorta, gbc);
+        pnl.add(txtPorta, gbc3);
 
         JButton btnConectar = new JButton("Conectar ao Servidor");
-        gbc.gridx = 0; gbc.gridy = 2; gbc.gridwidth = 2;
-        pnl.add(btnConectar, gbc);
+        GridBagConstraints gbc4 = new GridBagConstraints();
+        gbc4.insets = new Insets(10, 10, 10, 10);
+        gbc4.gridx = 0; gbc4.gridy = 2; gbc4.gridwidth = 2;
+        pnl.add(btnConectar, gbc4);
         btnConectar.addActionListener(e -> conectar());
         
         return pnl;
@@ -105,42 +119,90 @@ public class ClienteGUI extends JFrame {
         // Login
         JPanel pnlLogin = new JPanel(new GridBagLayout());
         pnlLogin.setBorder(new TitledBorder("Login"));
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(5, 5, 5, 5);
-        gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        gbc.gridx = 0; gbc.gridy = 0; pnlLogin.add(new JLabel("Usuário:"), gbc);
+        GridBagConstraints gbcL0 = new GridBagConstraints();
+        gbcL0.insets = new Insets(5, 5, 5, 5);
+        gbcL0.fill = GridBagConstraints.HORIZONTAL;
+        gbcL0.gridx = 0; gbcL0.gridy = 0;
+        pnlLogin.add(new JLabel("Usuário:"), gbcL0);
+
+        GridBagConstraints gbcL1 = new GridBagConstraints();
+        gbcL1.insets = new Insets(5, 5, 5, 5);
+        gbcL1.fill = GridBagConstraints.HORIZONTAL;
+        gbcL1.gridx = 1; gbcL1.gridy = 0;
         txtUsuarioLogin = new JTextField(10);
-        gbc.gridx = 1; pnlLogin.add(txtUsuarioLogin, gbc);
+        pnlLogin.add(txtUsuarioLogin, gbcL1);
 
-        gbc.gridx = 0; gbc.gridy = 1; pnlLogin.add(new JLabel("Senha:"), gbc);
+        GridBagConstraints gbcL2 = new GridBagConstraints();
+        gbcL2.insets = new Insets(5, 5, 5, 5);
+        gbcL2.fill = GridBagConstraints.HORIZONTAL;
+        gbcL2.gridx = 0; gbcL2.gridy = 1;
+        pnlLogin.add(new JLabel("Senha:"), gbcL2);
+
+        GridBagConstraints gbcL3 = new GridBagConstraints();
+        gbcL3.insets = new Insets(5, 5, 5, 5);
+        gbcL3.fill = GridBagConstraints.HORIZONTAL;
+        gbcL3.gridx = 1; gbcL3.gridy = 1;
         txtSenhaLogin = new JPasswordField(10);
-        gbc.gridx = 1; pnlLogin.add(txtSenhaLogin, gbc);
+        pnlLogin.add(txtSenhaLogin, gbcL3);
 
         JButton btnLogin = new JButton("Entrar");
-        gbc.gridx = 0; gbc.gridy = 2; gbc.gridwidth = 2;
-        pnlLogin.add(btnLogin, gbc);
+        GridBagConstraints gbcL4 = new GridBagConstraints();
+        gbcL4.insets = new Insets(5, 5, 5, 5);
+        gbcL4.fill = GridBagConstraints.HORIZONTAL;
+        gbcL4.gridx = 0; gbcL4.gridy = 2; gbcL4.gridwidth = 2;
+        pnlLogin.add(btnLogin, gbcL4);
         btnLogin.addActionListener(e -> login());
 
         // Cadastro
         JPanel pnlCad = new JPanel(new GridBagLayout());
         pnlCad.setBorder(new TitledBorder("Cadastro de Novo Usuário"));
-        
-        gbc.gridx = 0; gbc.gridy = 0; gbc.gridwidth = 1; pnlCad.add(new JLabel("Nome:"), gbc);
+
+        GridBagConstraints gbcC0 = new GridBagConstraints();
+        gbcC0.insets = new Insets(5, 5, 5, 5);
+        gbcC0.fill = GridBagConstraints.HORIZONTAL;
+        gbcC0.gridx = 0; gbcC0.gridy = 0;
+        pnlCad.add(new JLabel("Nome:"), gbcC0);
+
+        GridBagConstraints gbcC1 = new GridBagConstraints();
+        gbcC1.insets = new Insets(5, 5, 5, 5);
+        gbcC1.fill = GridBagConstraints.HORIZONTAL;
+        gbcC1.gridx = 1; gbcC1.gridy = 0;
         txtNomeCad = new JTextField(10);
-        gbc.gridx = 1; pnlCad.add(txtNomeCad, gbc);
+        pnlCad.add(txtNomeCad, gbcC1);
 
-        gbc.gridx = 0; gbc.gridy = 1; pnlCad.add(new JLabel("Usuário:"), gbc);
+        GridBagConstraints gbcC2 = new GridBagConstraints();
+        gbcC2.insets = new Insets(5, 5, 5, 5);
+        gbcC2.fill = GridBagConstraints.HORIZONTAL;
+        gbcC2.gridx = 0; gbcC2.gridy = 1;
+        pnlCad.add(new JLabel("Usuário:"), gbcC2);
+
+        GridBagConstraints gbcC3 = new GridBagConstraints();
+        gbcC3.insets = new Insets(5, 5, 5, 5);
+        gbcC3.fill = GridBagConstraints.HORIZONTAL;
+        gbcC3.gridx = 1; gbcC3.gridy = 1;
         txtUsuarioCad = new JTextField(10);
-        gbc.gridx = 1; pnlCad.add(txtUsuarioCad, gbc);
+        pnlCad.add(txtUsuarioCad, gbcC3);
 
-        gbc.gridx = 0; gbc.gridy = 2; pnlCad.add(new JLabel("Senha:"), gbc);
+        GridBagConstraints gbcC4 = new GridBagConstraints();
+        gbcC4.insets = new Insets(5, 5, 5, 5);
+        gbcC4.fill = GridBagConstraints.HORIZONTAL;
+        gbcC4.gridx = 0; gbcC4.gridy = 2;
+        pnlCad.add(new JLabel("Senha:"), gbcC4);
+
+        GridBagConstraints gbcC5 = new GridBagConstraints();
+        gbcC5.insets = new Insets(5, 5, 5, 5);
+        gbcC5.fill = GridBagConstraints.HORIZONTAL;
+        gbcC5.gridx = 1; gbcC5.gridy = 2;
         txtSenhaCad = new JPasswordField(10);
-        gbc.gridx = 1; pnlCad.add(txtSenhaCad, gbc);
+        pnlCad.add(txtSenhaCad, gbcC5);
 
         JButton btnCad = new JButton("Cadastrar");
-        gbc.gridx = 0; gbc.gridy = 3; gbc.gridwidth = 2;
-        pnlCad.add(btnCad, gbc);
+        GridBagConstraints gbcC6 = new GridBagConstraints();
+        gbcC6.insets = new Insets(5, 5, 5, 5);
+        gbcC6.fill = GridBagConstraints.HORIZONTAL;
+        gbcC6.gridx = 0; gbcC6.gridy = 3; gbcC6.gridwidth = 2;
+        pnlCad.add(btnCad, gbcC6);
         btnCad.addActionListener(e -> cadastrar());
 
         pnl.add(pnlLogin);
@@ -212,22 +274,46 @@ public class ClienteGUI extends JFrame {
 
     private JPanel criarPainelPerfil() {
         JPanel pnl = new JPanel(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(10, 10, 10, 10);
-        gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        gbc.gridx = 0; gbc.gridy = 0; pnl.add(new JLabel("Meu Nome:"), gbc);
+        GridBagConstraints gbc0 = new GridBagConstraints();
+        gbc0.insets = new Insets(10, 10, 10, 10);
+        gbc0.fill = GridBagConstraints.HORIZONTAL;
+        gbc0.gridx = 0; gbc0.gridy = 0;
+        pnl.add(new JLabel("Meu Nome:"), gbc0);
+
+        GridBagConstraints gbc1 = new GridBagConstraints();
+        gbc1.insets = new Insets(10, 10, 10, 10);
+        gbc1.fill = GridBagConstraints.HORIZONTAL;
+        gbc1.gridx = 1; gbc1.gridy = 0;
         txtMeuNome = new JTextField(20);
-        gbc.gridx = 1; pnl.add(txtMeuNome, gbc);
+        pnl.add(txtMeuNome, gbc1);
 
-        gbc.gridx = 0; gbc.gridy = 1; pnl.add(new JLabel("Meu Usuário:"), gbc);
+        GridBagConstraints gbc2 = new GridBagConstraints();
+        gbc2.insets = new Insets(10, 10, 10, 10);
+        gbc2.fill = GridBagConstraints.HORIZONTAL;
+        gbc2.gridx = 0; gbc2.gridy = 1;
+        pnl.add(new JLabel("Meu Usuário:"), gbc2);
+
+        GridBagConstraints gbc3 = new GridBagConstraints();
+        gbc3.insets = new Insets(10, 10, 10, 10);
+        gbc3.fill = GridBagConstraints.HORIZONTAL;
+        gbc3.gridx = 1; gbc3.gridy = 1;
         txtMeuUsuario = new JTextField(20);
         txtMeuUsuario.setEditable(false);
-        gbc.gridx = 1; pnl.add(txtMeuUsuario, gbc);
+        pnl.add(txtMeuUsuario, gbc3);
 
-        gbc.gridx = 0; gbc.gridy = 2; pnl.add(new JLabel("Nova Senha:"), gbc);
+        GridBagConstraints gbc4 = new GridBagConstraints();
+        gbc4.insets = new Insets(10, 10, 10, 10);
+        gbc4.fill = GridBagConstraints.HORIZONTAL;
+        gbc4.gridx = 0; gbc4.gridy = 2;
+        pnl.add(new JLabel("Nova Senha:"), gbc4);
+
+        GridBagConstraints gbc5 = new GridBagConstraints();
+        gbc5.insets = new Insets(10, 10, 10, 10);
+        gbc5.fill = GridBagConstraints.HORIZONTAL;
+        gbc5.gridx = 1; gbc5.gridy = 2;
         txtMinhaSenha = new JPasswordField(20);
-        gbc.gridx = 1; pnl.add(txtMinhaSenha, gbc);
+        pnl.add(txtMinhaSenha, gbc5);
 
         JPanel pnlBotoes = new JPanel(new FlowLayout());
         JButton btnConsultar = new JButton("Consultar Meus Dados");
@@ -238,9 +324,12 @@ public class ClienteGUI extends JFrame {
         pnlBotoes.add(btnConsultar);
         pnlBotoes.add(btnAtualizar);
         pnlBotoes.add(btnDeletar);
-        
-        gbc.gridx = 0; gbc.gridy = 3; gbc.gridwidth = 2;
-        pnl.add(pnlBotoes, gbc);
+
+        GridBagConstraints gbc6 = new GridBagConstraints();
+        gbc6.insets = new Insets(10, 10, 10, 10);
+        gbc6.fill = GridBagConstraints.HORIZONTAL;
+        gbc6.gridx = 0; gbc6.gridy = 3; gbc6.gridwidth = 2;
+        pnl.add(pnlBotoes, gbc6);
 
         btnConsultar.addActionListener(e -> operacao("consultarUsuario"));
         btnAtualizar.addActionListener(e -> {
@@ -270,21 +359,45 @@ public class ClienteGUI extends JFrame {
 
         JPanel pnlControle = new JPanel(new GridBagLayout());
         pnlControle.setBorder(new TitledBorder("Operações Administrativas"));
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(5, 5, 5, 5);
-        gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        gbc.gridx = 0; gbc.gridy = 0; pnlControle.add(new JLabel("Usuário Alvo:"), gbc);
+        GridBagConstraints gbc0 = new GridBagConstraints();
+        gbc0.insets = new Insets(5, 5, 5, 5);
+        gbc0.fill = GridBagConstraints.HORIZONTAL;
+        gbc0.gridx = 0; gbc0.gridy = 0;
+        pnlControle.add(new JLabel("Usuário Alvo:"), gbc0);
+
+        GridBagConstraints gbc1 = new GridBagConstraints();
+        gbc1.insets = new Insets(5, 5, 5, 5);
+        gbc1.fill = GridBagConstraints.HORIZONTAL;
+        gbc1.gridx = 1; gbc1.gridy = 0;
         txtAdminAlvo = new JTextField(15);
-        gbc.gridx = 1; pnlControle.add(txtAdminAlvo, gbc);
+        pnlControle.add(txtAdminAlvo, gbc1);
 
-        gbc.gridx = 0; gbc.gridy = 1; pnlControle.add(new JLabel("Novo Nome:"), gbc);
+        GridBagConstraints gbc2 = new GridBagConstraints();
+        gbc2.insets = new Insets(5, 5, 5, 5);
+        gbc2.fill = GridBagConstraints.HORIZONTAL;
+        gbc2.gridx = 0; gbc2.gridy = 1;
+        pnlControle.add(new JLabel("Novo Nome:"), gbc2);
+
+        GridBagConstraints gbc3 = new GridBagConstraints();
+        gbc3.insets = new Insets(5, 5, 5, 5);
+        gbc3.fill = GridBagConstraints.HORIZONTAL;
+        gbc3.gridx = 1; gbc3.gridy = 1;
         txtAdminNovoNome = new JTextField(15);
-        gbc.gridx = 1; pnlControle.add(txtAdminNovoNome, gbc);
+        pnlControle.add(txtAdminNovoNome, gbc3);
 
-        gbc.gridx = 0; gbc.gridy = 2; pnlControle.add(new JLabel("Nova Senha:"), gbc);
+        GridBagConstraints gbc4 = new GridBagConstraints();
+        gbc4.insets = new Insets(5, 5, 5, 5);
+        gbc4.fill = GridBagConstraints.HORIZONTAL;
+        gbc4.gridx = 0; gbc4.gridy = 2;
+        pnlControle.add(new JLabel("Nova Senha:"), gbc4);
+
+        GridBagConstraints gbc5 = new GridBagConstraints();
+        gbc5.insets = new Insets(5, 5, 5, 5);
+        gbc5.fill = GridBagConstraints.HORIZONTAL;
+        gbc5.gridx = 1; gbc5.gridy = 2;
         txtAdminNovaSenha = new JPasswordField(15);
-        gbc.gridx = 1; pnlControle.add(txtAdminNovaSenha, gbc);
+        pnlControle.add(txtAdminNovaSenha, gbc5);
 
         JPanel pnlBotoes = new JPanel(new FlowLayout());
         JButton btnListar = new JButton("Listar Todos");
@@ -296,9 +409,12 @@ public class ClienteGUI extends JFrame {
         pnlBotoes.add(btnConsultar);
         pnlBotoes.add(btnAtualizar);
         pnlBotoes.add(btnDeletar);
-        
-        gbc.gridx = 0; gbc.gridy = 3; gbc.gridwidth = 2;
-        pnlControle.add(pnlBotoes, gbc);
+
+        GridBagConstraints gbc6 = new GridBagConstraints();
+        gbc6.insets = new Insets(5, 5, 5, 5);
+        gbc6.fill = GridBagConstraints.HORIZONTAL;
+        gbc6.gridx = 0; gbc6.gridy = 3; gbc6.gridwidth = 2;
+        pnlControle.add(pnlBotoes, gbc6);
         
         pnl.add(pnlControle, BorderLayout.SOUTH);
 
