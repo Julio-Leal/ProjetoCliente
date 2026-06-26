@@ -339,6 +339,9 @@ public class ClienteGUI extends JFrame {
             m.setNome(txtMeuNome.getText());
             m.setSenha(new String(txtMinhaSenha.getPassword()));
             out.println(gson.toJson(m));
+            
+            //LOG MOSTRADO NO TERMINAL
+            System.out.println("[Enviado]: " + gson.toJson(m)); 
         });
         btnDeletar.addActionListener(e -> {
             if (JOptionPane.showConfirmDialog(this, "Tem certeza que deseja deletar sua conta?") == JOptionPane.YES_OPTION) {
@@ -425,6 +428,9 @@ public class ClienteGUI extends JFrame {
             m.setToken(token);
             m.setUsuario(txtAdminAlvo.getText());
             out.println(gson.toJson(m));
+            
+            //LOG MOSTRADO NO TERMINAL
+            System.out.println("[Enviado]: " + gson.toJson(m));
         });
         btnAtualizar.addActionListener(e -> {
             Mensagem m = new Mensagem();
@@ -434,6 +440,9 @@ public class ClienteGUI extends JFrame {
             m.setNome(txtAdminNovoNome.getText());
             m.setSenha(new String(txtAdminNovaSenha.getPassword()));
             out.println(gson.toJson(m));
+            
+            //LOG MOSTRADO NO TERMINAL
+            System.out.println("[Enviado]: " + gson.toJson(m));
         });
         btnDeletar.addActionListener(e -> {
             Mensagem m = new Mensagem();
@@ -441,6 +450,9 @@ public class ClienteGUI extends JFrame {
             m.setToken(token);
             m.setUsuario(txtAdminAlvo.getText());
             out.println(gson.toJson(m));
+            
+            //LOG MOSTRADO NO TERMINAL
+            System.out.println("[Enviado]: " + gson.toJson(m));
         });
 
         return pnl;
@@ -451,6 +463,9 @@ public class ClienteGUI extends JFrame {
         m.setOp(op);
         m.setToken(token);
         out.println(gson.toJson(m));
+        
+        //LOG MOSTRADO NO TERMINAL
+        System.out.println("[Enviado]: " + gson.toJson(m));
     }
 
     private void conectar() {
@@ -471,6 +486,9 @@ public class ClienteGUI extends JFrame {
         m.setSenha(new String(txtSenhaLogin.getPassword()));
         meuUsuario = m.getUsuario();
         out.println(gson.toJson(m));
+        
+        //LOG MOSTRADO NO TERMINAL
+        System.out.println("[Enviado]: " + gson.toJson(m));
     }
 
     private void cadastrar() {
@@ -480,6 +498,9 @@ public class ClienteGUI extends JFrame {
         m.setUsuario(txtUsuarioCad.getText());
         m.setSenha(new String(txtSenhaCad.getPassword()));
         out.println(gson.toJson(m));
+        
+        //LOG MOSTRADO NO TERMINAL
+        System.out.println("[Enviado]: " + gson.toJson(m));
     }
 
     private void logout() {
@@ -487,6 +508,9 @@ public class ClienteGUI extends JFrame {
         m.setOp("logout");
         m.setToken(token);
         out.println(gson.toJson(m));
+        
+        //LOG MOSTRADO NO TERMINAL
+        System.out.println("[Enviado]: " + gson.toJson(m));
     }
 
     private void sair() {
@@ -498,13 +522,14 @@ public class ClienteGUI extends JFrame {
 
     private void enviarMensagem(boolean broadcast) {
         String texto = txtMensagem.getText();
-        if (texto.isEmpty()) return;
+        if (texto.isEmpty()) 
+        	return;
         Mensagem m = new Mensagem();
         m.setOp("enviarMensagem");
         m.setToken(token);
         m.setMensagem(texto);
         if (broadcast) {
-            m.setDestinatario("todos");
+            m.setDestinatario("/todos");
         } else {
             String dest = listUsuarios.getSelectedValue();
             if (dest == null) {
@@ -516,6 +541,9 @@ public class ClienteGUI extends JFrame {
         out.println(gson.toJson(m));
         txtMensagem.setText("");
         exibirMensagem("Eu -> " + m.getDestinatario() + ": " + texto);
+        
+        //LOG MOSTRADO NO TERMINAL
+        System.out.println("[Enviado]: " + gson.toJson(m));
     }
 
     public void exibirMensagem(String msg) {
