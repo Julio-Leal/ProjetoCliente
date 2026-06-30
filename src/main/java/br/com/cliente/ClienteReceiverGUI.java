@@ -66,7 +66,7 @@ public class ClienteReceiverGUI implements Runnable {
             gui.exibirMensagem(msg.getUsuario() + ": " + msg.getMensagem());
         }
 
-        if ("listaUsuariosLogados".equals(msg.getOp())) {
+        if ("listarUsuariosLogados".equals(msg.getOp())) {
             gui.atualizarListaUsuarios(msg.getLista_usuarios());
         }
     }
