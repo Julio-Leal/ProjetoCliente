@@ -55,7 +55,7 @@ public class ClienteGUI extends JFrame {
     private String meuUsuario = null;
 
     public ClienteGUI() {
-        setTitle("Cliente de Chat - EP3");
+        setTitle("Cliente de Chat");
         setSize(900, 600);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         
